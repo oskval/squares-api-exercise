@@ -1,7 +1,13 @@
-﻿namespace squares_api_exercise.Contracts
+﻿using squares_api_exercise.Models;
+
+namespace squares_api_exercise.Contracts
 {
     public interface ISquaresService
     {
-        List<string> GetSquares();
+        List<Coordinate> Get();
+        List<Coordinate> Post(List<CoordinateDto> coordinateDtoList);
+        Coordinate Add(CoordinateDto coordinateDto);
+        bool Delete(string id);
+        bool DeleteAll();
     }
 }
