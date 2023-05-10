@@ -44,5 +44,11 @@ namespace squares_api_exercise.Controllers
         {
             return _squaresService.DeleteAll() ? Ok() : BadRequest();
         }
+
+        [HttpGet("GetSquares")]
+        public async Task<List<List<Coordinate>>> GetSquares()
+        {
+            return _squaresService.GetSquares();
+        }
     }
 }

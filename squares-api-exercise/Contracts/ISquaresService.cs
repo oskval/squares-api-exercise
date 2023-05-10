@@ -9,5 +9,6 @@ namespace squares_api_exercise.Contracts
         Coordinate Add(CoordinateDto coordinateDto);
         bool Delete(string id);
         bool DeleteAll();
+        List<List<Coordinate>> GetSquares();
     }
 }
