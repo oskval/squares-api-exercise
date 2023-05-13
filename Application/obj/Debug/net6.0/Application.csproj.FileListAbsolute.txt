@@ -1,0 +1,15 @@
+C:\Users\oskar\Desktop\squares-api-exercise\Application\bin\Debug\net6.0\Application.deps.json
+C:\Users\oskar\Desktop\squares-api-exercise\Application\bin\Debug\net6.0\Application.dll
+C:\Users\oskar\Desktop\squares-api-exercise\Application\bin\Debug\net6.0\Application.pdb
+C:\Users\oskar\Desktop\squares-api-exercise\Application\bin\Debug\net6.0\Entities.dll
+C:\Users\oskar\Desktop\squares-api-exercise\Application\bin\Debug\net6.0\Entities.pdb
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\Application.csproj.AssemblyReference.cache
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\Application.AssemblyInfoInputs.cache
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\Application.AssemblyInfo.cs
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\Application.dll
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\refint\Application.dll
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\Application.pdb
+C:\Users\oskar\Desktop\squares-api-exercise\Application\obj\Debug\net6.0\ref\Application.dll

@@ -1,0 +1,12 @@
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\bin\Debug\net6.0\Persistence.deps.json
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\bin\Debug\net6.0\Persistence.dll
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\bin\Debug\net6.0\Persistence.pdb
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\Persistence.AssemblyInfo.cs
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\Persistence.dll
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\refint\Persistence.dll
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\Persistence.pdb
+C:\Users\oskar\Desktop\squares-api-exercise\Persistance\obj\Debug\net6.0\ref\Persistence.dll
