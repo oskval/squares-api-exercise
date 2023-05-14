@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API.csproj", "{428C0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "..\Persistance\Persistence.csproj", "{1AFFF3D5-7135-4B1B-9689-1C5D9BB96200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "..\Domain\Entities.csproj", "{B3EFCEFC-E9DB-41C2-B9EE-D3F7158AEC6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "..\Domain\Entities.csproj", "{B3EFCEFC-E9DB-41C2-B9EE-D3F7158AEC6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "..\Application\Application.csproj", "{5F544059-5F0A-426D-9ECA-4DC8E59AFFC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "..\Application\Application.csproj", "{5F544059-5F0A-426D-9ECA-4DC8E59AFFC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "..\IntegrationTests\IntegrationTests.csproj", "{711C7FC2-947E-434E-A5FB-9CBFED12E71F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5F544059-5F0A-426D-9ECA-4DC8E59AFFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F544059-5F0A-426D-9ECA-4DC8E59AFFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F544059-5F0A-426D-9ECA-4DC8E59AFFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711C7FC2-947E-434E-A5FB-9CBFED12E71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711C7FC2-947E-434E-A5FB-9CBFED12E71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711C7FC2-947E-434E-A5FB-9CBFED12E71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711C7FC2-947E-434E-A5FB-9CBFED12E71F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
