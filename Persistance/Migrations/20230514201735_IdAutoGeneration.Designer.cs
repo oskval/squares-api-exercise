@@ -11,8 +11,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230514154455_InitialDb")]
-    partial class InitialDb
+    [Migration("20230514201735_IdAutoGeneration")]
+    partial class IdAutoGeneration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Entities.Models.Coordinate", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("text");
 
                     b.Property<int>("XCoord")
@@ -37,7 +38,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coordinate");
+                    b.ToTable("Coordinates");
                 });
 #pragma warning restore 612, 618
         }

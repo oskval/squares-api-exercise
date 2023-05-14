@@ -11,7 +11,7 @@ namespace Persistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Coordinate",
+                name: "Coordinates",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
@@ -20,7 +20,7 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Coordinate", x => x.Id);
+                    table.PrimaryKey("PK_Coordinates", x => x.Id);
                 });
         }
 
@@ -28,7 +28,7 @@ namespace Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Coordinate");
+                name: "Coordinates");
         }
     }
 }

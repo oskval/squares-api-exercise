@@ -5,11 +5,11 @@ namespace Application.Contracts
 {
     public interface ICoordinatesService
     {
-        List<Coordinate> GetCoordinates();
-        List<Coordinate> SaveCoordinates(List<CoordinateDto> coordinateDtoList);
-        Coordinate SaveCoordinate(CoordinateDto coordinateDto);
-        bool DeleteCoordinate(string id);
-        bool DeleteCoordinates();
-        List<List<Coordinate>> GetSquares();
+        Task<List<Coordinate>> GetCoordinates();
+        Task<List<Coordinate>> SaveCoordinates(List<CoordinateDto> coordinateDtoList);
+        Task<Coordinate> SaveCoordinate(CoordinateDto coordinateDto);
+        Task<bool> DeleteCoordinate(string id);
+        Task<bool> DeleteCoordinates();
+        Task<List<List<Coordinate>>> GetSquares();
     }
 }

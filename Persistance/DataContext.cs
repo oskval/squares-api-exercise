@@ -13,8 +13,13 @@ namespace Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Coordinate>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            });
         }
 
-        public DbSet<Coordinate> Coordinate { get; set; }
+        public DbSet<Coordinate> Coordinates { get; set; }
     }
 }
