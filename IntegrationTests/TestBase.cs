@@ -9,9 +9,9 @@ namespace IntegrationTests
 {
     public class TestBase
     {
-        public readonly DataContext _dataContext;
-        public readonly CoordinatesService _coordinatesService;
-        public readonly ShapesService _shapesService;
+        public readonly DataContext DataContext;
+        public readonly CoordinatesService CoordinatesService;
+        public readonly ShapesService ShapesService;
 
         public TestBase()
         {
@@ -19,17 +19,24 @@ namespace IntegrationTests
                 .UseInMemoryDatabase(databaseName: "Database")
                 .Options;
 
-            _dataContext = new DataContext(options);
+            DataContext = new DataContext(options);
 
-            var coordinatesRepository = new CoordinatesRepository(_dataContext);
-            _coordinatesService = new CoordinatesService(coordinatesRepository);
-            _shapesService = new ShapesService(coordinatesRepository);
+            var coordinatesRepository = new CoordinatesRepository(DataContext);
+            CoordinatesService = new CoordinatesService(coordinatesRepository);
+            ShapesService = new ShapesService(coordinatesRepository);
         }
 
         public async Task SetUp(List<Coordinate> coordinates)
         {
-            _dataContext.Coordinates.AddRange(coordinates);
-            await _dataContext.SaveChangesAsync();
+            DataContext.Coordinates.AddRange(coordinates);
+            await DataContext.SaveChangesAsync();
+        }
+
+        public async Task ClearCoordinates()
+        {
+            var allCoordinates = await DataContext.Coordinates.ToListAsync();
+            DataContext.Coordinates.RemoveRange(allCoordinates);
+            await DataContext.SaveChangesAsync();
         }
 
         public List<CoordinateDto> GetCoordinatesDtoMockData()

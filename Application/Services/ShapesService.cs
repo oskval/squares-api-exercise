@@ -4,11 +4,15 @@ using Application.Contracts;
 
 namespace Application.Services
 {
+    // TODO: Add validation
+    // TODO: Research better algorithms / refactor existing
+    // TODO: BUG -> duplicate coordinates should be filtered out
+
     public class ShapesService : IShapesService
     {
-        private readonly CoordinatesRepository _coordinatesRepository;
+        private readonly ICoordinatesRepository _coordinatesRepository;
 
-        public ShapesService(CoordinatesRepository coordinatesRepository)
+        public ShapesService(ICoordinatesRepository coordinatesRepository)
         {
             _coordinatesRepository = coordinatesRepository;
         }

@@ -6,6 +6,9 @@ using Persistence;
 
 namespace Application.Repositories
 {
+    // TODO: Add Mapper
+    // TODO: Make Generic
+
     public class CoordinatesRepository : ICoordinatesRepository
     {
         private readonly DataContext _dataContext;

@@ -4,7 +4,8 @@ using Entities.Models;
 
 namespace Application.Services
 {
-    // TODO: Add validation, exceptions and middleware handling
+    // TODO: Add validation
+
     public class CoordinatesService : ICoordinatesService
     {
         private readonly ICoordinatesRepository _coordinatesRepository;

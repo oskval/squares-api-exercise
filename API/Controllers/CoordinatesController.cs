@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    // TODO: Add generic base response class
+
     [ApiController]
     [Route("[controller]")]
     public class CoordinatesController : ControllerBase
@@ -44,12 +46,6 @@ namespace API.Controllers
         public async Task<IActionResult> DeleteCoordinates()
         {
             return await _coordinatesService.DeleteCoordinates() ? Ok() : BadRequest();
-        }
-
-        [HttpGet("GetSquares")]
-        public async Task<List<List<Coordinate>>> GetSquares()
-        {
-            return await _coordinatesService.GetSquares();
         }
     }
 }

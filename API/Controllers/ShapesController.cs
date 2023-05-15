@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    // TODO: Add generic base response class
+
     [ApiController]
     [Route("[controller]")]
     public class ShapesController : ControllerBase

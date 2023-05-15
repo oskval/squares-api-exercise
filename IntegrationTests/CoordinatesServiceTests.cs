@@ -1,13 +1,12 @@
-using Application.Repositories;
-using Application.Services;
 using Entities.DTOs;
 using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
-using Persistence;
 
 namespace IntegrationTests
 {
+    // TODO: Use Mapper
+
     [TestFixture]
     public class CoordinatesServiceTests : TestBase
     {
@@ -17,7 +16,7 @@ namespace IntegrationTests
             var mockData = GetCoordinatesMockData();
             await SetUp(mockData);
 
-            var coordinates = await _coordinatesService.GetCoordinates();
+            var coordinates = await CoordinatesService.GetCoordinates();
 
             Assert.That(coordinates, Is.Not.Empty);
             Assert.That(coordinates.Count, Is.EqualTo(mockData.Count));
@@ -32,9 +31,9 @@ namespace IntegrationTests
                 YCoord = 555
             };
 
-            var id = (await _coordinatesService.SaveCoordinate(coordinateDto)).Id;
+            var id = (await CoordinatesService.SaveCoordinate(coordinateDto)).Id;
 
-            var dbCoordinate = await _dataContext.Coordinates.FindAsync(id);
+            var dbCoordinate = await DataContext.Coordinates.FindAsync(id);
 
             Assert.That(dbCoordinate, Is.Not.Null);
         }
@@ -42,12 +41,12 @@ namespace IntegrationTests
         [Test]
         public async Task SaveCoordinates_Should_Save_Coordinates()
         {
-            var coordinates = await _coordinatesService.SaveCoordinates(
+            var coordinates = await CoordinatesService.SaveCoordinates(
                 GetCoordinatesDtoMockData());
 
             var coordinateIds = coordinates.Select(x => x.Id).ToList();
 
-            var dbCoordinates = await _dataContext.Coordinates.Where(x => 
+            var dbCoordinates = await DataContext.Coordinates.Where(x => 
                 coordinateIds.Contains(x.Id)).ToListAsync();
 
             Assert.That(dbCoordinates, Is.Not.Empty);
@@ -62,11 +61,11 @@ namespace IntegrationTests
             await SetUp(new List<Coordinate> { mockData });
 
             var id = mockData.Id;
-            var deleteResult = await _coordinatesService.DeleteCoordinate(id);
+            var deleteResult = await CoordinatesService.DeleteCoordinate(id);
             
             Assert.That(deleteResult, Is.True);
 
-            var nullDbCoordinate = await _dataContext.Coordinates.FindAsync(id);
+            var nullDbCoordinate = await DataContext.Coordinates.FindAsync(id);
 
             Assert.That(nullDbCoordinate, Is.Null);
         }
@@ -79,11 +78,11 @@ namespace IntegrationTests
 
             var ids = mockData.Select(x => x.Id).ToList();
 
-            var deleteResult = await _coordinatesService.DeleteCoordinates();
+            var deleteResult = await CoordinatesService.DeleteCoordinates();
 
             Assert.That(deleteResult, Is.True);
 
-            var nullDbCoordinates = await _dataContext.Coordinates.Where(x => 
+            var nullDbCoordinates = await DataContext.Coordinates.Where(x => 
                 ids.Contains(x.Id)).ToListAsync();
 
             Assert.That(nullDbCoordinates, Is.Empty);
