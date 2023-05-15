@@ -14,8 +14,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped<ICoordinatesService, CoordinatesService>();
 builder.Services.AddScoped<ICoordinatesRepository, CoordinatesRepository>();
+builder.Services.AddScoped<IShapesService, ShapesService>();
 
 var app = builder.Build();
 

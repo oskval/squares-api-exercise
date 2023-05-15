@@ -10,6 +10,5 @@ namespace Application.Contracts
         Task<Coordinate> SaveCoordinate(CoordinateDto coordinateDto);
         Task<bool> DeleteCoordinate(string id);
         Task<bool> DeleteCoordinates();
-        Task<List<List<Coordinate>>> GetSquares();
     }
 }

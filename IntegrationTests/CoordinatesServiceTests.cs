@@ -9,28 +9,13 @@ using Persistence;
 namespace IntegrationTests
 {
     [TestFixture]
-    public class CoordinatesServiceTests
+    public class CoordinatesServiceTests : TestBase
     {
-        private readonly DataContext _dataContext;
-        private readonly CoordinatesRepository _coordinatesRepository;
-        private readonly CoordinatesService _coordinatesService;
-
-        public CoordinatesServiceTests()
-        {
-            var options = new DbContextOptionsBuilder<DataContext>()
-                .UseInMemoryDatabase(databaseName: "Database")
-                .Options;
-
-            _dataContext = new DataContext(options);
-            _coordinatesRepository = new CoordinatesRepository(_dataContext);
-            _coordinatesService = new CoordinatesService(_coordinatesRepository);
-        }
-
         [Test]
         public async Task GetCoordinates_Should_Get_All_Coordinates()
         {
             var mockData = GetCoordinatesMockData();
-            SetUp(mockData);
+            await SetUp(mockData);
 
             var coordinates = await _coordinatesService.GetCoordinates();
 
@@ -74,7 +59,7 @@ namespace IntegrationTests
         {
             var mockData = GetCoordinatesMockData()[0];
 
-            SetUp(new List<Coordinate> { mockData });
+            await SetUp(new List<Coordinate> { mockData });
 
             var id = mockData.Id;
             var deleteResult = await _coordinatesService.DeleteCoordinate(id);
@@ -90,7 +75,7 @@ namespace IntegrationTests
         public async Task DeleteCoordinates_Should_Delete_All_Coordinates()
         {
             var mockData = GetCoordinatesMockData();
-            SetUp(mockData);
+            await SetUp(mockData);
 
             var ids = mockData.Select(x => x.Id).ToList();
 
@@ -102,67 +87,6 @@ namespace IntegrationTests
                 ids.Contains(x.Id)).ToListAsync();
 
             Assert.That(nullDbCoordinates, Is.Empty);
-        }
-
-        private void SetUp(List<Coordinate> coordinates)
-        {
-            _dataContext.Coordinates.AddRange(coordinates);
-            _dataContext.SaveChanges();
-        }
-
-        private List<CoordinateDto> GetCoordinatesDtoMockData()
-        {
-            return new List<CoordinateDto>
-            {
-                new()
-                {
-                    XCoord = 111,
-                    YCoord = 111,
-                },
-                new()
-                {
-                    XCoord = 222,
-                    YCoord = 222,
-                },
-                new()
-                {
-                    XCoord = 333,
-                    YCoord = 333,
-                },
-                new()
-                {
-                    XCoord = 444,
-                    YCoord = 444,
-                }
-            };
-        }
-
-
-        private List<Coordinate> GetCoordinatesMockData()
-        {
-            return new List<Coordinate>
-            {
-                new()
-                {
-                    XCoord = 111,
-                    YCoord = 111,
-                },
-                new()
-                {
-                    XCoord = 222,
-                    YCoord = 222,
-                },
-                new()
-                {
-                    XCoord = 333,
-                    YCoord = 333,
-                },
-                new()
-                {
-                    XCoord = 444,
-                    YCoord = 444,
-                }
-            };
         }
     }
 }
